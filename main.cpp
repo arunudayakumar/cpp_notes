@@ -1,3 +1,8 @@
+/*
+ * Issues without copy constructor
+ *
+ * */
+
 #include<iostream>
 
 struct Point{
