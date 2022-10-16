@@ -23,7 +23,9 @@ int main()
     p.array[1]=20;
     std::cout<<p.array<<'\n';
     p.clear();
-    Point p1 = p;
+
+    Point p1 = p; //Danger
+
     std::cout<<p1.array<<'\n';
     std::cout<<p1.array[0]<<'\n';
     std::cout<<p1.array[0]<<'\n';
