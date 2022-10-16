@@ -15,8 +15,8 @@ void clear() {
 };
 struct Point_Safe{
     Point_Safe(){}
-    //Point_Safe& operator = (Point_Safe& temp)=delete;
-    //Point_Safe(const Point_Safe& temp)= delete;
+    Point_Safe& operator = (Point_Safe& temp) = delete;
+    Point_Safe(const Point_Safe& temp) = delete;
     int x,y;
     int* array;
     void allocate(int size) {
@@ -57,12 +57,13 @@ int main()
     std::cout<<ps.array[0]<<'\n';
     ps.clear();
 
-    Point_Safe ps1 = ps; //Impossible - If ( Point_Safe(const Point_Safe& temp)= delete; )
+    //Point_Safe ps1 = ps; //Impossible - Point_Safe(const Point_Safe& temp)= delete;
     Point_Safe ps2;
-     ps2.x=1;
-     ps2.y=2;
+    ps2.x=1;
+    ps2.y=2;
 
-     ps2 = ps1;//Impossible - If ( Point_Safe& operator = (Point_Safe& temp)=delete; )
+    Point_Safe ps3;
+    //ps3 = ps2;          //Impossible -  Point_Safe& operator = (Point_Safe& temp) = delete;
 
 
     return 0;
