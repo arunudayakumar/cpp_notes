@@ -3,6 +3,7 @@
 
 int main()
 {
-    std::cout << "Hello World!" << '\n';
+    std::map<int, int> simplest_map;
+    simplest_map[1] = 1000;
     return 0;
 }
